@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkGray">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+
+        android:padding="20dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+
+        android:background="@color/middleGray"
+        >
+
+
+        <!-- Text of Sign Up -->
+        <TextView
+            android:id="@+id/textSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="회원가입"
+            android:textSize="35dp"
+            android:textColor="@color/lightBlack"
+
+            android:layout_centerHorizontal="true"
+            />
+
+
+
+        <RelativeLayout
+            android:id="@+id/upperLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/textSignup"
+
+            android:layout_marginTop="40dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+
+            android:background="@drawable/layout_line"
+            >
+
+        </RelativeLayout>
+
+
+
+        <!-- E-Mail -->
+        <RelativeLayout
+            android:id="@+id/writeEmailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingBottom="15dp"
+            android:layout_below="@id/upperLine"
+
+            android:background="@drawable/layout_line">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="메일인증"
+                android:textSize="25dp"/>
+
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/writeEmailAddress"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/writeEmailText"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="15dp"
+
+            android:background="@drawable/layout_line">
+
+
+            <TextView
+                android:id="@+id/writeEmailTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="메일 전송"
+                android:textSize="20dp"/>
+
+
+
+            <EditText
+                android:id="@+id/writeEmail_1"
+
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+
+                android:layout_below="@+id/writeEmailTxt"
+                android:layout_marginTop="15dp"
+
+                android:textSize="15dp"
+                android:ems="5"
+
+                android:background="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/writeEmail_1"
+                android:layout_alignTop="@+id/writeEmail_1"
+
+                android:text="  @  "
+                android:textSize="17dp"/>
+
+
+            <EditText
+                android:id="@+id/writeEmail_2"
+
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/at"
+                android:layout_alignBottom="@+id/writeEmail_1"
+
+                android:textSize="15dp"
+                android:ems="5"
+
+                android:background="@color/white"
+                />
+
+            <Button
+                android:id="@+id/sendEmailBtn"
+
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+
+                android:text="메일 전송"
+                android:textSize="17dp"
+
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/writeEmail_2"
+                android:layout_alignBottom="@+id/writeEmail_2"
+
+                android:onClick="sendEmail"
+                />
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/checkAccessNum"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/writeEmailAddress"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="15dp"
+
+            android:background="@drawable/layout_line">
+
+
+            <TextView
+                android:id="@+id/enterAccessNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="인증 번호"
+                android:textSize="20dp"/>
+
+
+
+            <EditText
+                android:id="@+id/accessNum"
+
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+
+                android:layout_below="@id/enterAccessNum"
+                android:layout_marginTop="15dp"
+
+                android:text="인증번호를 입력해 주세요"
+                android:textSize="15dp"
+                android:ems="12"
+                android:inputType="number"
+
+                android:background="@color/white"
+                />
+
+
+            <Button
+                android:id="@+id/checkAccessNumBtn"
+
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+
+                android:text="인증 확인"
+                android:textSize="17dp"
+
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/accessNum"
+                android:layout_alignBottom="@id/accessNum"
+
+                android:onClick="checkAccessNum"
+                />
+
+        </RelativeLayout>
+
+
+
+        <Button
+            android:id="@+id/nextBtn"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+
+            android:text="다음"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+
+            android:paddingLeft="100dp"
+            android:paddingRight="100dp"
+
+            android:background="@color/lightBlack"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

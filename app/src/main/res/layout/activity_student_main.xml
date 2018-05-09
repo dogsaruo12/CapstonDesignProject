@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/middleGray">
+
+
+    <TextView
+        android:id="@+id/connectingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+
+        android:text=""
+        android:textSize="15dp"
+        android:textColor="@color/white"
+
+        android:visibility="invisible"
+        android:background="@color/middleGray"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/studentManagement"
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+
+        android:layout_below="@+id/connectingText"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+
+        android:clickable="true"
+        android:onClick="changeMode"
+        android:background="@color/lightBlack">
+
+
+        <ImageView
+            android:id="@+id/managementImg"
+
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+
+            android:src="@mipmap/student"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/managementImg"
+            android:layout_marginTop="10dp"
+
+            android:text="학업관리"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/checkAlert"
+
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+
+        android:layout_below="@+id/studentManagement"
+        android:layout_above="@+id/checkInBtn"
+        android:layout_centerVertical="true"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+
+        android:background="@color/lightBlack">
+
+
+        <ImageView
+            android:id="@+id/alertImg"
+
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+
+            android:src="@mipmap/cell_phone"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="알림 확인"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/alertImg"/>
+
+    </RelativeLayout>
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/checkInBtn"
+
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+
+        android:clickable="true"
+        android:focusable="true"
+
+        android:background="@color/lightBlack">
+
+
+        <ImageView
+            android:id="@+id/checkInImg"
+
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+
+            android:src="@mipmap/check_in"/>
+
+
+        <TextView
+            android:id="@+id/checkInTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="출석 인증"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/checkInImg" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

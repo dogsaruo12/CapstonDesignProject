@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/middleGray"
+    >
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:id="@+id/attendenceRateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="출석률"
+                android:textSize="27dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentTop="true"/>
+
+
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:text="전체"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_alignBottom="@+id/attendenceRateTxt"/>
+
+
+            <!-- show simple graph about rate of attendence -->
+
+            <WebView
+                android:id="@+id/webViewCircle"
+                android:layout_below="@+id/attendenceRateTxt"
+                android:background="@color/darkGray"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="15dp">
+
+            </WebView>
+
+
+
+            <!-- show detail graph about rate of attendence -->
+
+            <WebView
+                android:id="@+id/webViewBar"
+                android:background="@color/darkGray"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/webViewCircle"
+                android:layout_marginTop="15dp">
+
+            </WebView>
+
+
+
+            <Button
+                android:id="@+id/showDetailBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="상세보기"
+
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/webViewBar"
+                android:layout_marginTop="10dp"
+                android:onClick="showDetail"
+
+                android:visibility="visible"
+
+                style="@style/Base.Widget.AppCompat.Button.Colored" />
+
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/attendenceInfoTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="출석 정보"
+                android:textSize="20dp"
+
+                android:visibility="gone"
+
+                android:layout_below="@+id/showDetailBtn"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentLeft="true"/>
+
+
+
+
+
+
+
+            <TableLayout
+                android:id="@+id/attendenceInfoTable"
+
+                android:visibility="visible"
+
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/attendenceInfoTxt"
+                android:background="@color/middleBlack"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="총 정상 출석 횟수"/>
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:background="@color/middleGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="값"/>
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="최근 정상 출석 횟수"/>
+                    <TextView
+                        android:gravity="center"
+                        android:background="@color/middleGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="값"/>
+
+                </TableRow>
+
+            </TableLayout>
+
+
+<!--==============================================================================-->
+
+
+
+
+
+            <TextView
+                android:id="@+id/tardyInfoTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="지각 정보"
+                android:textSize="20dp"
+
+                android:visibility="gone"
+
+                android:layout_below="@+id/attendenceInfoTable"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentLeft="true"/>
+
+
+
+
+
+
+            <TableLayout
+                android:id="@+id/tardyInfoTable"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/tardyInfoTxt"
+                android:background="@color/middleBlack"
+                android:padding="2dp"
+
+                android:visibility="gone"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="총 지각횟수"/>
+                    <TextView
+                        android:gravity="center"
+                        android:background="@color/middleGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="값"/>
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="최근 지각횟수"/>
+                    <TextView
+                        android:gravity="center"
+                        android:background="@color/middleGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="값"/>
+
+                </TableRow>
+            </TableLayout>
+
+
+
+            <!--==============================================================================-->
+
+
+
+            <TextView
+                android:id="@+id/leaveEarlyInfoTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="조퇴 정보"
+                android:textSize="20dp"
+
+                android:visibility="gone"
+
+                android:layout_below="@+id/tardyInfoTable"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentLeft="true"/>
+
+
+
+
+
+
+
+            <TableLayout
+                android:id="@+id/leaveEarlyInfoTable"
+
+                android:visibility="gone"
+
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/leaveEarlyInfoTxt"
+                android:background="@color/middleBlack"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="총 조퇴횟수"/>
+                    <TextView
+                        android:gravity="center"
+                        android:background="@color/middleGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="값"/>
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="최근 조퇴횟수"/>
+                    <TextView
+                        android:gravity="center"
+                        android:background="@color/middleGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="값"/>
+
+                </TableRow>
+
+            </TableLayout>
+
+
+            <!--==============================================================================-->
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/missedInfoTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="결석 정보"
+                android:textSize="20dp"
+
+                android:visibility="gone"
+
+                android:layout_below="@+id/leaveEarlyInfoTable"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentLeft="true"/>
+
+
+
+
+
+            <TableLayout
+                android:id="@+id/missedInfoTable"
+
+                android:visibility="gone"
+
+                android:layout_below="@+id/missedInfoTxt"
+                android:layout_marginTop="5dp"
+                android:background="@color/middleBlack"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="총 결석횟수"/>
+                    <TextView
+                        android:gravity="center"
+                        android:background="@color/middleGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="값"/>
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="최근 결석횟수"/>
+                    <TextView
+                        android:gravity="center"
+                        android:background="@color/middleGray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="값"/>
+
+                </TableRow>
+            </TableLayout>
+
+
+            <!--==============================================================================-->
+
+
+
+
+            <Button
+                android:id="@+id/showSimplyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/missedInfoTable"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="20dp"
+                android:text="간략히"
+
+                android:visibility="gone"
+
+                android:onClick="showSimply"
+                android:layout_centerHorizontal="true"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                />
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkGray">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+
+        android:padding="20dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+
+        android:background="@color/middleGray"
+        >
+
+
+        <!-- Text of Sign Up -->
+        <TextView
+            android:id="@+id/textSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="회원가입"
+            android:textSize="35dp"
+            android:textColor="@color/lightBlack"
+
+            android:layout_centerHorizontal="true"
+            />
+
+
+
+        <!-- User Image and Text -->
+        <RelativeLayout
+            android:id="@+id/userImageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/textSignup"
+
+            android:layout_marginTop="40dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+
+            android:background="@drawable/layout_line"
+
+            android:clickable="true"
+            android:onClick="setUserImgUpload"
+            >
+
+
+            <!-- User Image -->
+            <ImageView
+                android:id="@+id/userImage"
+
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/default_user_image"
+                />
+
+
+            <!-- Text next of User Image -->
+            <TextView
+                android:id="@+id/userImageText"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="터치하여 이미지 업로드"
+                android:textSize="15dp"
+
+                android:layout_toRightOf="@id/userImage"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/checkStudentIdLayout"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/userImageLayout"
+            android:layout_marginTop="40dp"
+            android:paddingBottom="15dp"
+
+            android:background="@drawable/layout_line">
+
+
+            <TextView
+                android:id="@+id/enterStudentIdText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="학번등록"
+                android:textSize="23dp"/>
+
+
+
+            <EditText
+                android:id="@+id/studentId"
+
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+
+                android:layout_below="@id/enterStudentIdText"
+                android:layout_marginTop="15dp"
+
+                android:text="학번을 입력해 주세요"
+                android:textSize="15dp"
+                android:ems="12"
+                android:inputType="number"
+
+                android:background="@color/white"
+                />
+
+
+            <Button
+                android:id="@+id/checkStudentIdBtn"
+
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+
+                android:text="등록 확인"
+                android:textSize="17dp"
+
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/studentId"
+                android:layout_alignBottom="@id/studentId"
+
+                android:onClick="checkOverlap"
+                />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/userIdCheckText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/checkStudentIdLayout"
+            android:layout_marginTop="10dp"
+
+            android:text=""
+            android:textSize="15dp"
+            />
+
+
+        <Button
+            android:id="@+id/nextBtn"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+
+            android:text="다음"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+
+            android:paddingLeft="100dp"
+            android:paddingRight="100dp"
+
+            android:background="@color/lightBlack"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
